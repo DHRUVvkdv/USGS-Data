@@ -1,0 +1,17 @@
+{
+    "lr": {
+      "siteId": "0205551460",
+      "siteName": "LICK RUN ABOVE PATTON AVENUE AT ROANOKE, VA",
+      "availableParameters": ["g", "d", "cos", "do", "pst", "ph", "p", "sc", "ta", "tw", "t"]
+    },
+    "tc1": {
+      "siteId": "02055379",
+      "siteName": "TINKER CREEK UPPER AT COLUMBIA ST AT ROANOKE, VA",
+      "availableParameters": ["g", "d", "do", "ph", "sc", "tw", "t"]
+    },
+    "tc2": {
+      "siteId": "0205551614",
+      "siteName": "TINKER CREEK ABOVE GLADE CREEK AT ROANOKE, VA",
+      "availableParameters": ["g", "d", "do", "ph", "sc", "tw", "t"]
+    }
+  }

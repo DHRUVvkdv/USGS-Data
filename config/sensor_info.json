@@ -1,0 +1,57 @@
+{
+  "g": {
+    "parameterCode": "00065",
+    "unit": "ft",
+    "variableDescription": "Gage height, feet"
+  },
+  "d": {
+    "parameterCode": "00060",
+    "unit": "ft3/s",
+    "variableDescription": "Discharge, cubic feet per second"
+  },
+  "cos": {
+    "parameterCode": "99234",
+    "unit": "nu",
+    "variableDescription": "Count of samples collected by autosampler, number"
+  },
+  "do": {
+    "parameterCode": "00300",
+    "unit": "mg/l",
+    "variableDescription": "Dissolved oxygen, water, unfiltered, milligrams per liter"
+  },
+  "pst": {
+    "parameterCode": "72329",
+    "unit": "deg C",
+    "variableDescription": "Pavement surface temperature, degrees Celsius"
+  },
+  "ph": {
+    "parameterCode": "00400",
+    "unit": "std units",
+    "variableDescription": "pH, water, unfiltered, field, standard units"
+  },
+  "p": {
+    "parameterCode": "00045",
+    "unit": "in",
+    "variableDescription": "Precipitation, total, inches"
+  },
+  "sc": {
+    "parameterCode": "00095",
+    "unit": "uS/cm @25C",
+    "variableDescription": "Specific conductance, water, unfiltered, microsiemens per centimeter at 25 degrees Celsius"
+  },
+  "ta": {
+    "parameterCode": "00020",
+    "unit": "deg C",
+    "variableDescription": "Temperature, air, degrees Celsius"
+  },
+  "tw": {
+    "parameterCode": "00010",
+    "unit": "deg C",
+    "variableDescription": "Temperature, water, degrees Celsius"
+  },
+  "t": {
+    "parameterCode": "63680",
+    "unit": "FNU",
+    "variableDescription": "Turbidity, water, unfiltered, monochrome near infra-red LED light, 780-900 nm, detection angle 90 +-2.5 degrees, formazin nephelometric units (FNU)"
+  }
+}

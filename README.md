@@ -1,6 +1,7 @@
-# USGS Water Data Fetcher
+# USGS Water Quality Data Fetcher
 
-This script is written to help get data from USGS website about water quality. The data from three sites can be gathered for now, which are given below.
+This script is written to help get data from USGS website about water quality. The parameters are listed below. 
+
 
 ## Available Parameters
 
@@ -16,6 +17,8 @@ This script is written to help get data from USGS website about water quality. T
 | ta         | Temperature, air (deg C)          |
 | tw         | Temperature, water (deg C)        |
 | t          | Turbidity (FNU)                   |
+
+The data from three sites can be gathered for now, which are given below.
 
 ## Available Sites
 

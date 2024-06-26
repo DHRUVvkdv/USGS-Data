@@ -76,17 +76,23 @@ The script uses `argparse` to create a user-friendly command-line interface. Use
 ## 4. Usage
 
 To use the script, run it from the command line with the following syntax:
-`python3 fetchData.py <site> <parameters> [--period <days>]`
+```python
+python3 fetchData.py <site> <parameters> [--period <days>]
+```
 
 Example:
+```python
 python3 fetchData.py tc2 sc g --period 7
+```
 
 This command will fetch specific conductance and gage height data for Tinker Creek Glade Creek for the past 7 days.
 
 ## 5. Data Storage
 
 The fetched data is stored in a structured directory hierarchy:
+```
 ../data/raw/<site*short_name>/<parameter_short_name>/<current_date>*<period>d/data.json
+```
 
 This structure allows for easy organization and retrieval of data based on site, parameter, and date.
 

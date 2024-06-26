@@ -1,3 +1,6 @@
+This script is written to help get data from USGS website about water quality.
+The data from three sites can be gathered for now, which are given below.
+
 # USGS-Data
 
 | Short Form | Description                       |
@@ -13,8 +16,13 @@
 | tw         | Temperature, water (deg C)        |
 | t          | Turbidity (FNU)                   |
 
-| Short Form | Description              |
-| ---------- | ------------------------ |
-| lr         | Lick Run                 |
-| tc1        | Tinker Creek Columbia St |
-| tc2        | Tinker Creek Glade Creek |
+| Short Form | Description | Parameters Available |
+| ---------- | ------------------------ | |
+| lr | Lick Run | ["g", "d", "cos", "do", "pst", "ph", "p", "sc", "ta", "tw", "t"] |
+| tc1 | Tinker Creek Columbia St | ["g", "d", "do", "ph", "sc", "tw", "t"] |
+| tc2 | Tinker Creek Glade Creek | ["g", "d", "do", "ph", "sc", "tw", "t"] |
+
+Usage:
+
+Example:
+python3 fetchData.py tc2 sc --period 1

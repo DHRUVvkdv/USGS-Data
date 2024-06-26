@@ -76,7 +76,7 @@ The script uses `argparse` to create a user-friendly command-line interface. Use
 ## 4. Usage
 
 To use the script, run it from the command line with the following syntax:
-python3 fetchData.py <site> <parameters> [--period <days>]
+`python3 fetchData.py <site> <parameters> [--period <days>]`
 
 Example:
 python3 fetchData.py tc2 sc g --period 7

@@ -76,6 +76,24 @@ For example:
 ../data/raw/tc2/sc/2023-06-25_1d/data.json
 ```
 
+## Data Format
+
+The data is downloaded from the USGS National Water Information System (NWIS) in JSON format. The script then extracts the relevant time series data and saves it in a simplified JSON structure. Each data point in the saved JSON file includes:
+
+- `value`: The measured value of the parameter
+- `qualifiers`: Any qualifiers for the measurement (e.g., "P" for provisional data)
+- `dateTime`: The date and time of the measurement
+
+Example of a single data point in the saved JSON file:
+
+```json
+{
+    "value": "2.25",
+    "qualifiers": ["P"],
+    "dateTime": "2024-06-25T07:25:00.000-04:00"
+}
+```
+
 ## Error Handling
 
 The script will display error messages if:
@@ -89,7 +107,7 @@ The script will display error messages if:
 
 This script fetches data from the USGS National Water Information System (NWIS). Please ensure you comply with their terms of service when using this data.
 
-# USGS Water Data Fetcher - Detailed Documentation
+# USGS Water Quality Data Fetcher - Detailed Documentation
 
 ## 1. Introduction
 

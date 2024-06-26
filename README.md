@@ -1,3 +1,91 @@
+# USGS Water Data Fetcher
+
+This script is written to help get data from USGS website about water quality. The data from three sites can be gathered for now, which are given below.
+
+## Available Parameters
+
+| Short Form | Description                       |
+| ---------- | --------------------------------- |
+| d          | Discharge (ft3/s)                 |
+| g          | Gage height (ft)                  |
+| cos        | Count of samples (number)         |
+| do         | Dissolved oxygen (mg/l)           |
+| ph         | pH (standard units)               |
+| p          | Precipitation (in)                |
+| sc         | Specific conductance (uS/cm @25C) |
+| ta         | Temperature, air (deg C)          |
+| tw         | Temperature, water (deg C)        |
+| t          | Turbidity (FNU)                   |
+
+## Available Sites
+
+| Short Form | Description              | Parameters Available                                             |
+| ---------- | ------------------------ | ---------------------------------------------------------------- |
+| lr         | Lick Run                 | ["g", "d", "cos", "do", "pst", "ph", "p", "sc", "ta", "tw", "t"] |
+| tc1        | Tinker Creek Columbia St | ["g", "d", "do", "ph", "sc", "tw", "t"]                          |
+| tc2        | Tinker Creek Glade Creek | ["g", "d", "do", "ph", "sc", "tw", "t"]                          |
+
+## Usage
+
+To use this script, run it from the command line with the following syntax:
+
+```python
+python3 fetchData.py <site> <parameters> [--period <days>]
+```
+
+- `<site>`: The short form of the site (lr, tc1, or tc2)
+- `<parameters>`: One or more parameter short forms (e.g., g d sc)
+- `--period`: (Optional) Number of days to fetch data for (default is 1)
+
+### Example
+
+```python
+python3 fetchData.py tc2 sc --period 1
+```
+
+This command will fetch specific conductance data for Tinker Creek Glade Creek for the past 1 day.
+
+## Requirements
+
+- Python 3.6 or higher
+- `requests` library (install with `pip install requests`)
+
+## Configuration
+
+The script uses two configuration files:
+
+- `../config/sensor_info.json`: Contains information about the parameters
+- `../config/site_info.json`: Contains information about the sites
+
+Make sure these files are present and correctly formatted before running the script.
+
+## Output
+
+The fetched data is saved in JSON format in the following directory structure:
+
+```
+../data/raw/<site_short_name>/<parameter_short_name>/<current_date>_<period>d/data.json
+```
+
+For example:
+
+```
+../data/raw/tc2/sc/2023-06-25_1d/data.json
+```
+
+## Error Handling
+
+The script will display error messages if:
+
+- An invalid site short name is provided
+- Invalid parameters are provided
+- Parameters not available for the specified site are requested
+- There's an issue fetching or parsing the data from the USGS API
+
+## Note
+
+This script fetches data from the USGS National Water Information System (NWIS). Please ensure you comply with their terms of service when using this data.
+
 # USGS Water Data Fetcher - Detailed Documentation
 
 ## 1. Introduction
@@ -73,40 +161,6 @@ The script uses `argparse` to create a user-friendly command-line interface. Use
 - One or more parameters (required)
 - The time period in days (optional, defaults to 1)
 
-## 4. Usage
-
-To use the script, run it from the command line with the following syntax:
-```python
-python3 fetchData.py <site> <parameters> [--period <days>]
-```
-
-Example:
-```python
-python3 fetchData.py tc2 sc g --period 7
-```
-
-This command will fetch specific conductance and gage height data for Tinker Creek Glade Creek for the past 7 days.
-
-## 5. Data Storage
-
-The fetched data is stored in a structured directory hierarchy:
-```
-../data/raw/<site*short_name>/<parameter_short_name>/<current_date>*<period>d/data.json
-```
-
-This structure allows for easy organization and retrieval of data based on site, parameter, and date.
-
-## 6. Error Handling
-
-The script includes error handling for various scenarios:
-
-- Invalid site or parameter inputs
-- Unavailable parameters for a given site
-- API request failures
-- Data parsing issues
-
-Error messages are displayed to the user, and the script exits with a non-zero status code in case of errors.
-
 ## 7. Extensibility
 
 The script is designed to be easily extensible:
@@ -132,3 +186,7 @@ Potential future improvements:
 ## 9. Conclusion
 
 The USGS Water Data Fetcher provides a convenient way to retrieve water quality data from the USGS NWIS. Its modular design and use of configuration files make it adaptable to various use cases and easy to maintain and extend.
+
+## 10. Contributing
+
+Contributions to improve the USGS Water Data Fetcher are welcome. Please feel free to submit pull requests or open issues on the project's GitHub repository.
